@@ -16,7 +16,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install newrelic
 
 
-ENV NEW_RELIC_APP_NAME=petrosa-strategy-screenings-backtesting
+ENV NEW_RELIC_APP_NAME=petrosa-usa-strategy-ta-backtesting
 ENV NEW_RELIC_DISTRIBUTED_TRACING_ENABLED=true
 ENV NEW_RELIC_MONITOR_MODE=true
 # ENV NEW_RELIC_LOG_LEVEL=debug

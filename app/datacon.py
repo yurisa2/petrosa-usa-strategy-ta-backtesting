@@ -14,7 +14,7 @@ def get_client() -> pymongo.MongoClient:
         os.getenv(
             'MONGO_URI', 'mongodb://root:QnjfRW7nl6@localhost:27017'),
         readPreference='secondaryPreferred',
-        appname='petrosa-usa-ta-backtesting'
+        appname='petrosa-ta-bt-usa'
     )
 
     return client
@@ -80,6 +80,10 @@ def find_params():
     except Exception as e:
         logging.error(e)
         raise
+
+    # params = client.petrosa_usa['backtest_controller'].find(
+    #     {"strategy": "fox_trap_buy", "symbol": "DASHUSDT", "period": "m15"})
+    # params = list(params)[0]
 
     return params
 
@@ -153,6 +157,8 @@ def screening_output(
         minutes = 30
     elif (timeframe == 'h1'):
         minutes = 60
+    elif (timeframe == 'd1'):
+        minutes = 1440
     else:
         raise
 
