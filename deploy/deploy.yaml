@@ -18,7 +18,7 @@ spec:
       nodeName: k3os-18256
       containers:
       - name: petrosa-usa-strategy-ta-backtesting
-        image: yurisa2/petrosa-usa-strategy-ta-backtesting:v0.0.16
+        image: yurisa2/petrosa-usa-strategy-ta-backtesting:v0.0.17
         imagePullPolicy: Always
         resources:
           limits:
