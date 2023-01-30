@@ -18,7 +18,7 @@ class bb_backtest(Strategy):
 
     def next(self):
         
-        if (self.curr_day != self.data.index[-1]):
+        if (self.curr_day.day != self.data.index[-1].day):
             work_data = self.main_data.loc[self.main_data.index
                                             <= self.data.index[-1]]
 
@@ -75,7 +75,7 @@ def run_backtest(params):
     strat.tf_timeframe = params['period']
     
     strat.params = params
-    strat.curr_day = None
+    strat.curr_day = datetime.datetime.utcnow()
 
     bt = Backtest(
         data,

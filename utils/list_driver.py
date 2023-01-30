@@ -21,13 +21,13 @@ full_bt_list = []
 for symbol in col_symbols:
     for period in periods:
         row = {}
-        row['symbol'] = symbol['_id']
+        row['symbol'] = symbol['Symbol']
         row['period'] = period
-        row['strategy'] = 'inside_bar_sell'
+        row['strategy'] = 'bear_trap_buy'
         row['status'] = 0
         row['str_class'] = 'ta'
-        # row['type'] = 'BUY'
-        row['type'] = 'SELL'
+        row['type'] = 'BUY'
+        # row['type'] = 'SELL'
         full_bt_list.append(row)
         print(row)
 
